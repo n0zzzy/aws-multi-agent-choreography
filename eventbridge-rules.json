@@ -1,3 +1,17 @@
 {
-    "Rules": []
+  "EventBusName": "multi-agent-bus",
+  "Rules": [
+    {
+      "Name": "PlannerAgentRule",
+      "EventPattern": "{\"source\": [\"workshop.travel-request\"]}"
+    },
+    {
+      "Name": "WeatherAgentRule",
+      "EventPattern": "{\"source\": [\"workshop.planner-agent\"], \"detail-type\": [\"DatesFinalized\"]}"
+    },
+    {
+      "Name": "FlightManagerAgentRule",
+      "EventPattern": "{\"source\": [\"workshop.weather-agent\"], \"detail-type\": [\"WeatherAnalysisCompleted\"]}"
+    }
+  ]
 }
