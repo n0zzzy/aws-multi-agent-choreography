@@ -1,0 +1,7 @@
+[
+  {
+    "Source": "workshop.human-review",
+    "DetailType": "HumanApprovalDecision",
+    "Detail": "{\"bookingId\": \"high-risk-test-456\", \"decision\": \"APPROVED\", \"reviewer\": \"workshop-admin\"}"
+  }
+]
