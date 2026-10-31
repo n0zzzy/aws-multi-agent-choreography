@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="444" viewBox="0 0 1000 444">
+<style>
+  .t { font: 700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif; fill: #e6edf3; }
+  .s { font: 400 11.5px 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif; fill: #8b949e; }
+  .lbl { font: 600 11px 'Fira Code', Consolas, monospace; fill: #dc2626; letter-spacing: 1px; }
+  .flow { stroke-dasharray: 6 6; animation: flow 1s linear infinite; }
+  @keyframes flow { to { stroke-dashoffset: -12; } }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { stroke-opacity: .35; } }
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker></defs>
+<rect x="0.5" y="0.5" width="999" height="443" rx="12" fill="#0d1117" stroke="#30363d"/>
+<rect x="0.5" y="0.5" width="5" height="443" rx="2" fill="#dc2626"/>
+<text x="30" y="42" style="font: 800 22px 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif; fill: #e6edf3">Multi-Agent Choreography: Amazon EventBridge</text>
+<text x="30" y="66" style="font: 400 13px 'Fira Code', Consolas, monospace; fill: #dc2626">// decentralized: agents never call each other, they react to events</text>
+<text x="30" y="131.0" class="lbl">TRIGGER</text>
+<rect x="150.0" y="96" width="820.0" height="62" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1" />
+<rect x="150.0" y="96" width="3" height="62" rx="1.5" fill="#dc2626"/>
+<text x="560.0" y="123" class="t" text-anchor="middle">TravelRequestSubmitted</text>
+<text x="560.0" y="142" class="s" text-anchor="middle">source: workshop.travel-request</text>
+<text x="30" y="239.0" class="lbl">EVENT BUS</text>
+<rect x="150.0" y="204" width="820.0" height="62" rx="8" fill="#2a0a0c" stroke="#dc2626" stroke-width="2" class="pulse"/>
+<rect x="150.0" y="204" width="3" height="62" rx="1.5" fill="#dc2626"/>
+<text x="560.0" y="231" class="t" text-anchor="middle">EventBridge · multi-agent-bus</text>
+<text x="560.0" y="250" class="s" text-anchor="middle">rule-based routing on source + detail-type</text>
+<text x="30" y="347.0" class="lbl">AGENTS</text>
+<rect x="150.0" y="312" width="262.7" height="62" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1" />
+<rect x="150.0" y="312" width="3" height="62" rx="1.5" fill="#dc2626"/>
+<text x="281.3" y="339" class="t" text-anchor="middle">Planner Agent</text>
+<text x="281.3" y="358" class="s" text-anchor="middle">emits DatesFinalized</text>
+<rect x="428.7" y="312" width="262.7" height="62" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1" />
+<rect x="428.7" y="312" width="3" height="62" rx="1.5" fill="#dc2626"/>
+<text x="560.0" y="339" class="t" text-anchor="middle">Weather Agent</text>
+<text x="560.0" y="358" class="s" text-anchor="middle">emits WeatherAnalysisCompleted</text>
+<line x1="413.7" y1="343.0" x2="426.7" y2="343.0" stroke="#dc2626" stroke-width="2" marker-end="url(#a)"/>
+<rect x="707.3" y="312" width="262.7" height="62" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1" />
+<rect x="707.3" y="312" width="3" height="62" rx="1.5" fill="#dc2626"/>
+<text x="838.7" y="339" class="t" text-anchor="middle">Flight Manager</text>
+<text x="838.7" y="358" class="s" text-anchor="middle">emits FinalBookingCompleted</text>
+<line x1="692.3" y1="343.0" x2="705.3" y2="343.0" stroke="#dc2626" stroke-width="2" marker-end="url(#a)"/>
+<line x1="560.0" y1="158.0" x2="560.0" y2="187.9" stroke="#dc2626" stroke-width="2" class="flow"/>
+<line x1="560.0" y1="187.9" x2="560.0" y2="187.9" stroke="#dc2626" stroke-width="2"/>
+<line x1="560.0" y1="187.9" x2="560.0" y2="201" stroke="#dc2626" stroke-width="2" marker-end="url(#a)"/>
+<line x1="560.0" y1="266.0" x2="560.0" y2="295.9" stroke="#dc2626" stroke-width="2" class="flow"/>
+<line x1="560.0" y1="295.9" x2="281.3" y2="295.9" stroke="#dc2626" stroke-width="2"/>
+<line x1="281.3" y1="295.9" x2="281.3" y2="309" stroke="#dc2626" stroke-width="2" marker-end="url(#a)"/>
+<text x="30" y="418" style="font: 400 12px 'Fira Code', Consolas, monospace; fill: #8b949e">every hop goes through the bus · Lambda agents · S3 session state · new agents just subscribe</text>
+</svg>
