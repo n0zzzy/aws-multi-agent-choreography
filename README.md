@@ -2,6 +2,9 @@
 
 An enterprise-grade, event-driven multi-agent workshop implementation using **Amazon EventBridge** and **Serverless Architecture**. This project demonstrates decentralized choreography where autonomous agents coordinate by publishing and subscribing to events on a shared event bus.
 
+
+<p align="center"><img src="docs/architecture.svg" alt="Architecture diagram" width="100%"/></p>
+
 ## Architecture Overview
 - **Event Coordination Layer**: Amazon EventBridge (`multi-agent-bus`) handling event-driven routing.
 - **Microservices / Agents**:
